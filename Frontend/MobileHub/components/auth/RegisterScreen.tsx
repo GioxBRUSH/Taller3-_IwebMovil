@@ -6,6 +6,9 @@ import { Link } from 'expo-router';
 import { View } from "react-native";
 import axios from 'axios';
 
+/**
+ * Estilos para el componente RegisterScreen.
+ */
 const style =  StyleSheet.create({
     container:{
         flex:1,
@@ -22,37 +25,55 @@ const style =  StyleSheet.create({
         width:'100%',
         marginTop:20,
     },
-    
-    
 });
 
+/**
+ * Componente RegisterScreen.
+ * Este componente se utiliza para mostrar un formulario de registro.
+ */
 const RegisterScreen = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [year, setYear] = useState('');
     const [rut, setRut] = useState('');
 
+    /**
+     * Maneja el cambio del input de email.
+     * @param {string} text - El nuevo texto del input de email.
+     */
     const handleEmailChange = (text: string) =>{
         setEmail(text);
     }
 
+    /**
+     * Maneja el cambio del input de nombre.
+     * @param {string} text - El nuevo texto del input de nombre.
+     */
     const handleNameChange = (text: string) =>{
         setName(text);
     }
 
+    /**
+     * Maneja el cambio del input de rut.
+     * @param {string} text - El nuevo texto del input de rut.
+     */
     const handleRutChange = (text: string) =>{
         setRut(text);
     }
 
+    /**
+     * Maneja el cambio del input de año.
+     * @param {string} text - El nuevo texto del input de año.
+     */
     const handleYearChange = (text: string) =>{
         setYear(text);
     }
 
-    
-
+    /**
+     * Maneja el envío del formulario.
+     * Esta función está actualmente vacía y necesita ser implementada.
+     */
     const handleSubmit = () =>{}
-
-    
 
     return (
         <SafeAreaView style={style.container}>
@@ -107,9 +128,6 @@ const RegisterScreen = () => {
 
         </SafeAreaView>
     );
-
-
-
 }
 
 export default RegisterScreen

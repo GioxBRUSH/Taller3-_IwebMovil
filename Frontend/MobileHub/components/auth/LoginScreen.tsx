@@ -4,6 +4,9 @@ import { StyleSheet } from 'react-native';
 import {useState} from 'react';
 import { Link } from 'expo-router';
 
+/**
+ * Estilos para el componente LoginScreen.
+ */
 const style =  StyleSheet.create({
     container:{
         flex:1,
@@ -12,7 +15,6 @@ const style =  StyleSheet.create({
         alignItems:'center',
         gap:20.
     },
-
     textInput:{
         width:'100%',
     },
@@ -20,28 +22,39 @@ const style =  StyleSheet.create({
         width:'100%',
         marginTop:20,
     },
-    
-    
 });
 
+/**
+ * Componente LoginScreen.
+ * Este componente se utiliza para mostrar la pantalla de inicio de sesión.
+ */
 const LoginScreen = () => {
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
     const [hidePwd, setHidePwd] = useState(true);
 
-    const handleEmailChange = (text: string) =>{
+    /**
+     * Maneja el cambio de texto en el campo de correo electrónico.
+     * @param {string} text - El texto ingresado en el campo de correo electrónico.
+     */
+    const handleEmailChange = (text: string) => {
         setEmail(text);
     }
 
-    const handlePwdChange = (text: string) =>{
+    /**
+     * Maneja el cambio de texto en el campo de contraseña.
+     * @param {string} text - El texto ingresado en el campo de contraseña.
+     */
+    const handlePwdChange = (text: string) => {
         setPwd(text);
     }
 
-    const handleShowPassword = () =>{
+    /**
+     * Maneja el evento de mostrar/ocultar la contraseña.
+     */
+    const handleShowPassword = () => {
         setHidePwd(!hidePwd);
     }
-
-    
 
     return (
         <SafeAreaView style={style.container}>
@@ -75,12 +88,8 @@ const LoginScreen = () => {
                 Ingresar
             </Button>
            </Link>
- 
-
         </SafeAreaView>
     );
-
-
 }
 
 export default LoginScreen;

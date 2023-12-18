@@ -3,7 +3,9 @@ import { Button, Text } from 'react-native-paper';
 import { StyleSheet, Image } from 'react-native';
 import {Link} from 'expo-router';
 
-
+/**
+ * Estilos para el componente HomeScreen.
+ */
 const style =  StyleSheet.create({
     container:{
         flex:1,
@@ -11,7 +13,6 @@ const style =  StyleSheet.create({
         alignItems:'center',
         gap:20.
     },
-
     buttonStyle:{
         width:'100%',
     },
@@ -19,10 +20,14 @@ const style =  StyleSheet.create({
         width:350,
         height:350,
     },
-    
 });
-const HomeScreen = () =>{
-    return(
+
+/**
+ * Componente HomeScreen.
+ * Este componente se utiliza para mostrar la pantalla de inicio.
+ */
+const HomeScreen = () => {
+    return (
         <SafeAreaView style={style.container}>
             <Text variant ="displayMedium">!Bienvenido!</Text>
             <Image source={require('../assets/images/MobileHub.png')} style={style.image}/>
@@ -35,9 +40,7 @@ const HomeScreen = () =>{
                 Regístrarse
             </Button>
         </SafeAreaView>
-
     );
-
 }
 
 export default HomeScreen;
