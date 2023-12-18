@@ -24,7 +24,7 @@ namespace MobileHub.DataAnnotations
         }
 
 
-        
+
 /// <summary>
 /// Método para validar si el valor proporcionado es un correo electrónico válido de UCN.
 /// </summary>
@@ -51,5 +51,7 @@ public override bool IsValid(object? value)
     {
         // Si ocurre alguna excepción (por ejemplo, si el correo electrónico no contiene '@'), devuelve falso
         return false; 
+    }
+}
     }
 }

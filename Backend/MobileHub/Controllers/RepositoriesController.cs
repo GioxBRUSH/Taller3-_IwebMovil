@@ -85,3 +85,6 @@ private async Task<int> GetCommitsAmountByRepository(GitHubClient client, string
 
     return commits.Count;
 }
+
+ }
+}
