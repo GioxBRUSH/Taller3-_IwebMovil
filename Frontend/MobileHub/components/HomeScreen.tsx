@@ -1,13 +1,14 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button, Text } from 'react-native-paper';
 import { StyleSheet, Image } from 'react-native';
+import {Link} from 'expo-router';
 
 
 const style =  StyleSheet.create({
     container:{
         flex:1,
         padding:20,
-        alignitems:'center',
+        alignItems:'center',
         gap:20.
     },
 
@@ -25,10 +26,12 @@ const HomeScreen = () =>{
         <SafeAreaView style={style.container}>
             <Text variant ="displayMedium">!Bienvenido!</Text>
             <Image source={require('../assets/images/MobileHub.png')} style={style.image}/>
-            <Button style={style.buttonStyle} mode="contained" onPress={() => console.log('Pressed')}>
-                Iniciar Sesión
-            </Button>
-            <Button style={style.buttonStyle} mode="outlined" onPress={() => console.log('Pressed')}>
+            <Link href="/auth/login" asChild>
+                <Button style={style.buttonStyle} mode="contained" onPress={() => console.log('Login')}>
+                    Iniciar Sesión
+                </Button>
+            </Link>
+            <Button style={style.buttonStyle} mode="outlined" onPress={() => console.log('Register')}>
                 Regístrarse
             </Button>
         </SafeAreaView>
